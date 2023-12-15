@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+from src.utils.Arguments import parse_args, IArgs
+from src.Crypto import crypto_exe
+
+def main():
+    try:
+        args: IArgs = parse_args()
+        crypto_exe(args)
+        return 0
+    except ValueError as e:
+        print(e)
+        return 84
+
+if __name__ == '__main__':
+    exit(main())
